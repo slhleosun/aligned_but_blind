@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aligned but Blind: Alignment Increases Implicit Bias by Reducing Awareness of Race</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="project-title">
+                <span class="emoji">🎭</span> Aligned but Blind
+            </h1>
+            <p class="subtitle">Alignment Increases Implicit Bias by Reducing Awareness of Race</p>
+            
+            <div class="authors">
+                <a href="#" class="author">Lihao Sun</a><sup>1</sup>,
+                <a href="#" class="author">Chengzhi Mao</a><sup>2</sup>,
+                <a href="#" class="author">Valentin Hofmann</a><sup>3,4</sup>,
+                <a href="#" class="author">Xuechunzi Bai</a><sup>1</sup>
+            </div>
+            
+            <div class="affiliation">
+                <sup>1</sup>University of Chicago &nbsp;&nbsp;
+                <sup>2</sup>Rutgers University &nbsp;&nbsp;
+                <sup>3</sup>Allen Institute for AI &nbsp;&nbsp;
+                <sup>4</sup>University of Washington
+            </div>
+            
+            <div class="links">
+                <a href="https://arxiv.org/abs/2506.00253" class="link-button">
+                    <i class="fas fa-file-pdf"></i> Paper
+                </a>
+                <a href="https://github.com/slhleosun/aligned-but-blind" class="link-button">
+                    <i class="fab fa-github"></i> Code
+                </a>
+                <a href="#demo" class="link-button">
+                    <i class="fas fa-play"></i> Demo
+                </a>
+                <a href="https://twitter.com/intent/tweet?text=Check%20out%20Aligned%20but%20Blind%3A%20New%20research%20shows%20how%20alignment%20can%20increase%20implicit%20bias%20in%20LLMs&url=https://yourwebsite.github.io" class="link-button">
+                    <i class="fab fa-twitter"></i> Tweet
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h2>The Hidden Cost of Alignment</h2>
+                        <p class="lead">
+                            While alignment successfully reduces explicit bias in language models, 
+                            we discovered it paradoxically <strong>increases implicit bias</strong> by making 
+                            models "blind" to race. When faced with ambiguous contexts, aligned LLMs 
+                            fail to recognize racial concepts, bypassing safety mechanisms and producing 
+                            biased outputs—similar to human colorblindness.
+                        </p>
+                        <div class="key-stat">
+                            <div class="stat-number">91.4%</div>
+                            <div class="stat-label">Implicit bias in aligned models<br>vs. 64.1% in base models</div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/images/race-blindness-diagram.png" alt="Race Blindness in LLMs">
+                        <p class="caption">Aligned models interpret "black/white" as colors, not race, in ambiguous contexts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insight Section -->
+        <section class="insight-section">
+            <div class="container">
+                <div class="insight-box">
+                    <h3>💡 Key Insight</h3>
+                    <p>When LLMs don't "see" race, they can't activate safety guardrails against bias.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Abstract Section -->
+        <section class="abstract-section">
+            <div class="container">
+                <h2>Abstract</h2>
+                <p class="abstract-text">
+                    Although value-aligned language models (LMs) appear unbiased in explicit bias evaluations, 
+                    they often exhibit stereotypes in implicit word association tasks, raising concerns about 
+                    their fair usage. We investigate the mechanisms behind this discrepancy and find that 
+                    alignment surprisingly amplifies implicit bias in model outputs. Specifically, we show 
+                    that aligned LMs, unlike their unaligned counterparts, overlook racial concepts in early 
+                    internal representations when the context is ambiguous. Not representing race likely fails 
+                    to activate safety guardrails, leading to unintended biases. Inspired by this insight, 
+                    we propose a new bias mitigation strategy that works by incentivizing the representation 
+                    of racial concepts in the early model layers. In contrast to conventional mitigation 
+                    methods of machine unlearning, our interventions find that steering the model to be 
+                    more aware of racial concepts effectively mitigates implicit bias. Similar to race 
+                    blindness in humans, ignoring racial nuances can inadvertently perpetuate subtle 
+                    biases in LMs.
+                </p>
+            </div>
+        </section>
+
+        <!-- Method Section -->
+        <section class="method-section">
+            <div class="container">
+                <h2>How does alignment create blindness?</h2>
+                
+                <div class="method-overview">
+                    <img src="assets/images/method-overview.png" alt="Race Blindness Mechanism">
+                    <p class="caption">The pathway from ambiguous input to biased output in aligned models</p>
+                </div>
+                
+                <div class="method-steps">
+                    <div class="step">
+                        <div class="step-icon">🎲</div>
+                        <h3>Ambiguous Context</h3>
+                        <p>Words like "black" and "white" can refer to either race or color. In implicit prompts, this ambiguity is key.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">🎨</div>
+                        <h3>Color Interpretation</h3>
+                        <p>Aligned models default to interpreting these as colors, avoiding racial concepts entirely.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">🚫</div>
+                        <h3>Bypassed Guardrails</h3>
+                        <p>Without racial representation, safety mechanisms don't activate, allowing biases through.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">📊</div>
+                        <h3>Biased Associations</h3>
+                        <p>Results in strong implicit associations between "black" and negative concepts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+            <div class="container">
+                <h2>Key Findings</h2>
+                
+                <!-- Finding 1: Behavioral Results -->
+                <div class="finding-card">
+                    <h3>Finding 1: Alignment Flips the Bias Pattern</h3>
+                    <div class="finding-content">
+                        <div class="chart-container">
+                            <canvas id="biasChart"></canvas>
+                        </div>
+                        <div class="finding-text">
+                            <p>While alignment successfully reduces explicit bias to near zero, it dramatically increases implicit bias:</p>
+                            <ul>
+                                <li><strong>Explicit bias</strong>: 49.6% → 8.1% ✅</li>
+                                <li><strong>Implicit bias</strong>: 64.1% → 91.4% ❌</li>
+                            </ul>
+                            <p>This suggests aligned models have learned to avoid appearing biased but haven't addressed underlying associations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Finding 2: Mechanistic Interpretation -->
+                <div class="finding-card">
+                    <h3>Finding 2: Aligned Models Don't "See" Race</h3>
+                    <div class="finding-content">
+                        <div class="interpretation-examples">
+                            <div class="interp-column">
+                                <h4>🤖 Base Model</h4>
+                                <div class="interp-box race">Black Lives Matter</div>
+                                <div class="interp-box race">racial discrimination</div>
+                                <div class="interp-box color">black ink</div>
+                            </div>
+                            <div class="interp-column">
+                                <h4>🎯 Aligned Model</h4>
+                                <div class="interp-box color">black or white ink</div>
+                                <div class="interp-box color">whiteboard</div>
+                                <div class="interp-box color">black background</div>
+                            </div>
+                        </div>
+                        <p>Using activation patching, we found aligned models are 52.2% less likely to represent race in ambiguous contexts.</p>
+                    </div>
+                </div>
+
+                <!-- Finding 3: Intervention Results -->
+                <div class="finding-card">
+                    <h3>Finding 3: Making Models "See" Race Reduces Bias</h3>
+                    <div class="finding-content">
+                        <div class="intervention-results">
+                            <img src="assets/images/intervention-results.png" alt="Intervention Results">
+                        </div>
+                        <div class="finding-text">
+                            <p>By injecting race awareness into model representations:</p>
+                            <ul>
+                                <li><strong>Activation steering</strong>: 97.3% → 71.2% bias</li>
+                                <li><strong>LoRA fine-tuning</strong>: 97.3% → 42.4% bias</li>
+                                <li>Early layers (1-14) most effective</li>
+                            </ul>
+                            <p>This challenges conventional debiasing—instead of removing bias, we add racial awareness.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Citation Section -->
+        <section class="citation-section">
+            <div class="container">
+                <h2>Citation</h2>
+                <div class="citation-box">
+                    <pre><code>@article{sun2025aligned,
+    title={Aligned but Blind: Alignment Increases Implicit Bias by Reducing Awareness of Race},
+    author={Sun, Lihao and Mao, Chengzhi and Hofmann, Valentin and Bai, Xuechunzi},
+    journal={arXiv preprint arXiv:2506.00253},
+    year={2025}
+}</code></pre>
+                    <button class="copy-button" onclick="copyToClipboard()">
+                        <i class="fas fa-copy"></i> Copy
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Work Section -->
+        <section class="related-section">
+            <div class="container">
+                <h2>Related Work</h2>
+                <div class="related-grid">
+                    <div class="related-card">
+                        <h4>Race Blindness in Humans</h4>
+                        <p>Our findings parallel research on human colorblind racism, where ignoring race perpetuates inequality.</p>
+                        <a href="#" class="related-link">Bonilla-Silva (2021)</a>
+                    </div>
+                    <div class="related-card">
+                        <h4>Implicit Bias in LLMs</h4>
+                        <p>Prior work showing LLMs exhibit implicit biases despite appearing unbiased explicitly.</p>
+                        <a href="#" class="related-link">Hofmann et al. (2024)</a>
+                    </div>
+                    <div class="related-card">
+                        <h4>Mechanistic Interpretability</h4>
+                        <p>Methods for understanding internal model representations and decision-making.</p>
+                        <a href="#" class="related-link">Nanda et al. (2023)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Aligned but Blind Research Team. All rights reserved.</p>
+            <p>Website template inspired by <a href="https://selfie.cs.columbia.edu/" style="color: #10b981;">SelfIE</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

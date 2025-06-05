@@ -1,0 +1,408 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #10b981;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-light: #f9fafb;
+    --bg-white: #ffffff;
+    --border-color: #e5e7eb;
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--bg-white);
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.project-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.emoji {
+    font-size: 1.2em;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.authors {
+    margin-bottom: 10px;
+}
+
+.author {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.author:hover {
+    text-decoration: underline;
+}
+
+.affiliation {
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.link-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.link-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Main Content */
+.main-content {
+    padding: 60px 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--bg-white);
+    padding: 60px 0;
+    margin-bottom: 60px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.lead {
+    font-size: 1.2em;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 80px;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+/* Abstract Section */
+.abstract-section {
+    background-color: var(--bg-white);
+    padding: 60px 0;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.abstract-text {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: var(--text-light);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Method Section */
+.method-section {
+    background-color: var(--bg-white);
+    padding: 60px 0;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.method-overview {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.method-overview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.method-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.step p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Results Section */
+.results-section {
+    background-color: var(--bg-white);
+    padding: 60px 0;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.example-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.example-card {
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.example-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.example-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.example-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Demo Section */
+.demo-section {
+    margin-top: 60px;
+}
+
+.demo-section h3 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.demo-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#demo-input {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    resize: vertical;
+    margin-bottom: 20px;
+}
+
+.demo-button {
+    display: block;
+    width: 200px;
+    margin: 0 auto 30px;
+    padding: 12px 30px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.demo-button:hover {
+    background-color: #059669;
+}
+
+.demo-output {
+    background-color: var(--bg-light);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    min-height: 100px;
+    display: none;
+}
+
+.demo-output.active {
+    display: block;
+}
+
+/* Citation Section */
+.citation-section {
+    background-color: var(--bg-white);
+    padding: 60px 0;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.citation-box {
+    position: relative;
+    background-color: var(--bg-light);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.citation-box pre {
+    margin: 0;
+    overflow-x: auto;
+}
+
+.citation-box code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.copy-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.copy-button:hover {
+    background-color: #1d4ed8;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-dark);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 100px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2em;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .method-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .example-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .link-button {
+        width: 200px;
+        justify-content: center;
+    }
+}
