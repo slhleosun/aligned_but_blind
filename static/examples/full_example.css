@@ -1,0 +1,217 @@
+/* FILEPATH: static/styles.css */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* adjust this value to change the width of the checkboxes */
+    gap: 10px;
+}
+
+#topButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#topButton:hover {
+    background-color: #444;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+.regular-text {
+    font-weight: normal;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+th, td {
+    width: 300px; /* adjust this value to change the width of the columns */
+    word-wrap: break-word;
+}
+
+.first_col{
+    width: 50px;;
+}
+
+
+
+
+table {
+    border-collapse: separate;
+    border-spacing: 10px; /* This will increase the space between cells */
+    width: 100%;
+}
+
+table, th, td {
+    border: 0.5px solid rgba(0, 0, 0, 0.2); /* invisible border */
+    border-radius: 10px; 
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    /* font-size: 14px;  Adjust this value to match the desired font size */
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+}
+
+.first_col {
+    background: #F4F4F7;
+    font-weight: bold;
+    color: #313131;
+}
+
+.bold-text {
+    font-weight: bold;
+    display: block;  /* making it block-level will place it above the regular-text */
+    text-align: left;
+}
+
+.regular-text {
+    display: block;
+    color: #313131;
+    text-align: left;
+}
+
+/* Gradient backgrounds for headers similar to images */
+th {
+    background: #F4F4F7;
+    color: #313131; /* Assuming black text color, adjust if necessary */
+}
+
+/* Example gradient for table cells */
+td {
+    background: #F4F4F7;
+    position: relative;  /* set position for pseudo-elements */
+    color: #313131; /* Assuming black text color, adjust if necessary */
+}
+
+
+
+
+
+
+/* Apply font consistency throughout */
+body, select, button, label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 0.8rem;
+    color: #313131; 
+}
+
+/* Style the form for consistency with table */
+form {
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    margin-top=20px;
+    margin-bottom: 20px;
+}
+
+/* Style the dropdown menus to match table styling */
+select {
+    padding: 8px 12px;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: white; 
+}
+
+/* Consistent button styling */
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+/* Styling the checkboxes to have a consistent look */
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Styling the labels for the checkboxes */
+.checkbox-grid label {
+    padding: 8px;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-grid label:hover {
+    background-color: #e8e8e8;
+}
+
+
+button + .checkbox-grid {
+    margin-top: 20px;
+}
+
+/* Adding spacing between the "Select All" and "Deselect All" buttons */
+button + button {
+    margin-left: 10px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+
+.file-label, .prompt-label {
+    display: block;
+    margin-bottom: 10px; /* adjust this value to the desired spacing */
+}
+
+.file-dropdown, .prompt-dropdown {
+    display: block;
+    margin-bottom: 10px; /* adjust this value to the desired spacing below the dropdown */
+}
+
+
+hr {
+    height: 1px; /* Adjust this value as needed */
+    border: none; /* This removes the default border */
+    background-color:rgba(0, 0, 0, 0.2); /* Color of the horizontal line */
+}
+
+#leftButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+
+.button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    text-decoration-line: none;
+}
+
+
+.button:hover {
+    background-color: #444;
+}
+
