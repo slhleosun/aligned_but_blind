@@ -177,17 +177,14 @@
       <h2 class="title is-3">Behavioral Evidence</h2>
       <div class="content">
         <p>
-          We investigate racial bias in LMs—specifically, the tendency to associate 
-          <span class="dnerf">black</span> with negative words and 
-          <span class="dnerf">white</span> with positive ones. Bias is tested in two ways:
+          We curated pairs of implicit and explicit racial bias and used them to evaluate Llama 3 models. 
         </p>
         <ol style="text-align: left; display: inline-block; margin: 0 auto;">
           <li>
-            <b>Explicit:</b> Directly asking the model to agree/disagree with a given association.
+            <b>Explicit:</b> Likert scale, asking whether the model agrees with a given association such as <span class="dnerf">black</span> is related to negative, <span class="dnerf">white</span> is related to positive.
           </li>
           <li>
-            <b>Implicit:</b> Prompting the model to associate 
-            <span class="dnerf">black/white</span> with positive or negative words.
+            <b>Implicit:</b> Word association, let the model freely pair <span class="dnerf">black/white</span> with positive/negative words.
           </li>
         </ol>
 
