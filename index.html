@@ -56,8 +56,8 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://arxiv.org/abs/2403.10949">
-            SelfIE: Self-Interpretation of Large Language Model Embeddings
+          <a class="navbar-item" href="https://arxiv.org/abs/2504.14379">
+            The Geometry of Self-Verification in a Task-Specific Reasoning Model
           </a>
         </div>
       </div>
@@ -72,7 +72,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">&#129395;<span class="dnerf">Aligned but Blind</span>: Alignment Increases Implicit Bias by Reducing Awareness of Race</h1>
+          <h1 class="title is-1 publication-title"><span class="dnerf">Aligned but Blind</span>: <br>
+          Alignment Increases Implicit Bias by Reducing Awareness of Race</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://sites.google.com/uchicago.edu/lihao-sun">Lihao Sun</a><sup>1</sup>,</span>
@@ -100,7 +101,7 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2506.00253"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -117,7 +118,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
               <span class="link-block">
                 <a href="https://github.com/slhleosun/aligned-but-blind"
@@ -142,27 +143,12 @@
   <div class="container is-max-desktop">
     <div class="teaser">
       <h2 class="teaser-text">
-        <b>Language model alignment unintentionally <span class="dnerf">amplifies implicit racial biases</span> by reducing their sensitivity to race concepts—akin to race blindness in humans.</b>
+        <b>Language model alignment unintentionally amplifies implicit racial biases by reducing their sensitivity to race concepts - akin to race blindness in humans.</b> 
       </h2>
           <figure>
-            <img src="figures/behavioral.jpg" alt="Alignment reduces explicit but increases implicit bias">
-            <figcaption>While alignment removes explicit bias, it amplifies implicit racial bias when black/white can refer to either color or race.</figcaption>
+            <img src="static/images/selfie.jpg" alt="Alignment reduces explicit but increases implicit bias">
+            <figcaption>Interpretations of LM associations with <span class="dnerf">white/black</span>.  Alignment makes the model treat them more like pure colors rather than racial groups - ignoring race-related associations can exacerbate bias. </figcaption>
           </figure>
-          
-    </div>
-</section>
-<section class="safety-example-top">
-  <div class="container is-max-desktop">
-    <div class="safety-problem-top">
-      <h2 class="teaser-text">
-        <b>Key Finding</b>: Aligned models don't "see" race in ambiguous contexts, bypassing safety guardrails and producing biased outputs.
-      </h2>
-    </div>
-    <div class = "safety-top-image">
-      <figure>
-      <img src="figures/selfie.jpg" alt="SelfIE interpretations showing race blindness">
-      <figcaption>Using <span class="dnerf">SelfIE</span>, we found aligned models interpret "black/white" as colors, not racial concepts, in ambiguous contexts.</figcaption>
-    </figure>
     </div>
 </section>
 
@@ -171,20 +157,20 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3">Overview</h2>
         <div class="content ">
           <p>
-            Although value-aligned language models (LMs) appear unbiased in explicit bias evaluations, they often exhibit stereotypes in implicit word association tasks, raising concerns about their fair usage. We investigate the mechanisms behind this discrepancy and find that alignment surprisingly amplifies implicit bias in model outputs. Specifically, we show that aligned LMs, unlike their unaligned counterparts, <span class="dnerf">overlook racial concepts in early internal representations when the context is ambiguous</span>. Not representing race likely fails to activate safety guardrails, leading to unintended biases. Inspired by this insight, we propose a new bias mitigation strategy that works by incentivizing the representation of racial concepts in the early model layers. In contrast to conventional mitigation methods of machine unlearning, our interventions find that steering the model to be more aware of racial concepts effectively mitigates implicit bias. Similar to race blindness in humans, ignoring racial nuances can inadvertently perpetuate subtle biases in LMs.
+            Although value-aligned language models (LMs) appear unbiased in explicit bias evaluations, they often exhibit stereotypes in implicit word association tasks, raising concerns about their fair usage. We investigate the mechanisms behind this discrepancy and find that alignment surprisingly amplifies implicit bias in model outputs. Specifically, we show that aligned LMs, unlike their unaligned counterparts, <b>overlook racial concepts in early internal representations when the context is ambiguous</b>. Not representing race likely fails to activate safety guardrails, leading to unintended biases. Inspired by this insight, we propose a new bias mitigation strategy that works by incentivizing the representation of racial concepts in the early model layers. In contrast to conventional mitigation methods of machine unlearning, our interventions find that steering the model to be more aware of racial concepts effectively mitigates implicit bias. Similar to race blindness in humans, ignoring racial nuances can inadvertently perpetuate subtle biases in LMs.
           </p>
         </div>
       </div>
     </div>
 
-    <div class="container is-max-desktop">
-      <!-- Abstract. -->
+    <!-- <div class="container is-max-desktop">
+      Abstract.
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">How does alignment create <span class="dnerf">"race blindness"</span>?</h2>
+          <h2 class="title is-3"><b>Race blindness</b> in LMs </h2>
           <div class="content ">
             <div class = "surgery-image">
               <figure>
@@ -193,45 +179,74 @@
             </figure>
             </div>
             <ol>
-              <li><b>Ambiguous Context:</b> Words like "black" and "white" can refer to either race or color.</li>
+              <li><b>Ambiguous Context:</b> Words like <span class="dnerf">black</span> and <span class="dnerf">white</span> can refer to either race or color.</li>
               <li><b>Internal Representation:</b> Aligned models default to interpreting these as colors, avoiding racial concepts.</li>
               <li><b>Safety Bypass:</b> Without racial representation, safety mechanisms don't activate.</li>
-              <li><b>Biased Output:</b> Results in strong implicit associations between "black" and negative concepts (91.4% vs 64.1% in base models).</li>
+              <li><b>Biased Output:</b> Results in strong implicit associations between <span class="dnerf">black</span> and negative concepts (91.4% vs 64.1% in base models).</li>
             </ol>
             <p>We discovered this mechanism using activation patching and <span class="dnerf">SelfIE</span> interpretations, finding aligned models are <span class = "relevancy">52.2% less likely</span> to represent race internally.</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="container is-max-desktop">
         <!-- Abstract. -->
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
-            <h2 class="title is-3">Key Findings</h2>
+            <h2 class="title is-3">Behavioral Evidence</h2>
             <div class="content ">
-              <p><b>Finding 1: Alignment Flips the Bias Pattern.</b> We tested racial bias in two ways - explicit (directly asking about stereotypes) and implicit (word associations). While alignment successfully reduces explicit bias to near zero (8.1%), it dramatically increases implicit bias to 91.4%.</p>
-              <div class = "qualitative-understanding-images">
-                <figure>
-                <img src="figures/behavioral.jpg" alt="Behavioral results showing bias flip">
-                <figcaption>Alignment reduces explicit bias but amplifies implicit racial bias, especially in ambiguous contexts.</figcaption>
-              </figure>
+              <p> </p>
+              <p>We investigate racial bias in LMs - specifically, the tendency to associate <span class="dnerf">black</span> with negative words and <span class="dnerf">white</span> with positive ones. Bias is tested in two ways:
+                <ol>
+                  <li><b>Explicit:</b> Directly asking the model to agree/disagree with a given association.</li>
+                  <li><b>Implicit:</b> Prompting the model to associate <span class="dnerf">black/white</span> with positive or negative words. </li>
+                </ol></p>
+                <div class = "qualitative-understanding-images">
+                  <figure>
+                  <img src="static/images/behavioral.jpg" alt=" Alignment consistently
+                  increases black implicit bias while reducing explicit bias to near zero.">
+                  <figcaption>Alignment reduces explicit bias but amplifies implicit racial bias.</figcaption>
+                </figure>
+              <div style="border: 1px solid #ccc; padding: 10px; border-radius: 6px; background-color: #f9f9f9;">
+              <p>&#x1F4A1; Key Insight: <b>While alignment successfully reduces explicit bias to near zero (8.1%), it dramatically increases implicit bias to 91.4%.</b></p> 
               </div>
-             
-              <p><b>Finding 2: Aligned Models Are "Blind" to Race.</b> Using activation patching, we tested whether LMs represent black/white as race or color in ambiguous settings. Aligned models are 52.2% less likely to represent race internally. This "race blindness" explains why guardrails fail to activate during generation.</p>
-              <div class = "qualitative-understanding-images">
-                <figure>
-                <img src="figures/activation_patching.jpg" alt="Activation patching results">
-                <figcaption>Activation patching reveals aligned models treat "black/white" similarly to pure color contexts, not racial contexts.</figcaption>
-              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="container is-max-desktop">
+          <!-- Abstract. -->
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <h2 class="title is-3">Mechanistic Insights</h2>
+              <h3 class="title is-3">Activation Patching</h3>
+              <div class="content ">
+                <p>To explain this behavior, we use activation patching to test whether LMs represent <span class="dnerf">black/white</span> as race or color in ambiguous settings. </p>
+                <div class = "qualitative-understanding-images">
+                  <figure>
+                  <img src="static/images/activation_patching.jpg" alt="Activation patching results">
+                  <figcaption>Activation patching reveals aligned models treat "black/white" more as pure colors, not racial contexts.</figcaption>
+                </figure>
+                </div>
+                <p><b>Aligned models are 52.2% less likely to represent race internally.</b></p> 
+              </div>    
+              <h3 class="title is-3">SelfIE Analysis</h3>
+              <div class="content ">
+                <p>To explore whether stronger associations beyond the race/color binary might be present, we applied <a href="https://selfie.cs.columbia.edu/">SelfIE</a> - an open-ended natural language interpretation method that translates internal embeddings into text.</p>
+                <div class = "qualitative-understanding-images">
+                  <figure>
+                  <img src="static/images/selfie_detail.jpg" alt="SelfIE Interpretations">
+                  <figcaption> </figcaption>
+                </figure>
+                </div>
+                <p><ol>
+                  <li>SelfIE interpretations of white/black fell into three categories: color, race, or nonsensical outputs (e.g., repeating the instruction). </li>
+                </ol></p>
+                <p>Consistent with our activation patching results, <b>the aligned model produced 74.4% fewer race-related interpretations than the base model on implicit prompts. </b></p> 
               </div>
-              
-              <p><b>Finding 3: Making Models "See" Race Reduces Bias.</b> Counter-intuitively, we found that making models MORE aware of race reduces bias. By injecting race-aware activations or fine-tuning with LoRA, we reduced implicit bias by up to 55%.</p>
-              <div class = "qualitative-understanding-images">
-                <figure>
-                <img src="figures/intervention.jpg" alt="Intervention results">
-                <figcaption>Both activation steering and LoRA fine-tuning effectively reduce implicit bias by increasing race awareness.</figcaption>
-              </figure>
-              </div>
+              <div style="border: 1px solid #ccc; padding: 10px; border-radius: 6px; background-color: #f9f9f9;">
+              <p>&#x1F4A1; Key Insight: <b>Aligned LMs failed to robustly represent race concepts in face of ambiguity, exhibiting race blindness.</b> Not representing race likely fails to activate safety guardrails, leading to unintended biases.</p>    
+              </div> 
             </div>
           </div>
         </div>
@@ -241,39 +256,43 @@
           <!-- Abstract. -->
           <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
-              <h2 class="title is-3">Mitigating Race Blindness</h2>
+              <h2 class="title is-3">Causal Intevention: Strengthening Race Associations</h2>
               <div class="content ">
-                <p>Unlike traditional debiasing that removes racial concepts, we <span class="dnerf">add racial awareness</span> to reduce bias—similar to how acknowledging race reduces human colorblind racism.</p>
-                
-                <h3>Method 1: Activation Engineering</h3>
-                <p>We inject race-aware activations from disambiguated prompts (e.g., "Race: black and white") into the model during inference.</p>
-                <figure>
-                  <img src="static/images/activation-engineering.svg" alt="Activation engineering pipeline">
-                  <figcaption>Injecting race-laden activations reduces implicit bias from 97.3% to 71.2%, especially effective in early layers (5-14).</figcaption>
+                <p>Unlike traditional debiasing that removes racial concepts, we <b>add racial awareness</b> to reduce bias - similar to how acknowledging race reduces human colorblind racism. The effectiveness of this approach also provides causal support for our interpretability findings. </p>
+                <div class = "qualitative-understanding-images">
+                  <figure>
+                  <img src="static/images/intervention.jpg" alt="Causal results">
+                  <figcaption>Strengthening race associations reduces implicit and explicit bias in LMs.</figcaption>
                 </figure>
-                
-                <h3>Method 2: LoRA Fine-tuning</h3>
-                <p>We fine-tune models using LoRA on prompts where black/white are used ambiguously but labeled with racial meaning.</p>
-                <figure>
-                  <img src="static/images/lora-results.svg" alt="LoRA fine-tuning results">
-                  <figcaption>Targeted early-layer fine-tuning cuts implicit bias from 97.3% to 42.4% and also reduces explicit bias.</figcaption>
-                </figure>
-                
-                <p><b>Key Insight:</b> Our interventions work by making models recognize when ambiguous terms might have racial connotations, allowing safety mechanisms to properly activate. This challenges conventional machine learning approaches that try to remove bias-related concepts entirely.</p>
+                </div>
+              <h3 class="title is-3">Embedding Intervention via Steering</h3>
+              <div class="content ">
+                <p><b>Injecting race-aware activations </b> (from disambiguated prompts like <span class="dnerf"></span>“Race: black and white”</span>) <b>reduces implicit bias by 26-42%</b>, especially when applied to early layers.</p> 
+              </div>  
+
+              <h3 class="title is-3">Weight Intervention via LoRA Fine-tuning</h3>
+              <div class="content ">
+                We fine-tune models using LoRA on prompts where black/white are used ambiguously but labeled with racial meaning. 
+                <p><b>Targeted early-layer fine-tuning cuts implicit bias from 97.3% to 42.4% and also reduces explicit bias. </b> </p> 
+
+              <div style="border: 1px solid #ccc; padding: 10px; border-radius: 6px; background-color: #f9f9f9;">
+                <p>&#x1F4A1; Key Insight: <b>Enhancing the model's awareness of racial concepts effectively reduces implicit bias.</b></p> 
               </div>
             </div>
           </div>
 
+          <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                <h2 class="title is-3">Implications</h2>
+                <div class="content ">
+                  <p> Our findings suggest a broader class of alignment failure: when debiasing strategies suppress sensitive concepts, they can unintentionally reduce a model's ability to detect bias, which inadvertently exacerbate bias. Rather than removing sensitive concepts, reinforcing awareness of these concepts in language models can significantly mitigate biases. Future research could extend similar methodologies to other bias domains and investigate the pretraining origins of harmful associations, enhancing deeper alignment strategies across broader contexts. </p>
+              </div>
+            </div>
+          </div>
 
         
-    
-
-    <!--/ Abstract. -->
-
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
@@ -291,18 +310,20 @@
               <li><a href="https://arxiv.org/abs/2402.04105">Measuring Implicit Bias in Explicitly Unbiased Large Language Models</a></li>
               <li><a href="https://www.nature.com/articles/s41586-024-07856-5">AI generates covertly racist decisions about people based on their dialect</a></li>
             </ul>
+          </p>
+          <p>
+            <b>Mechanistic interpretability and intervention</b><br>
             Mechanistic interpretability for bias
             <ul>
               <li><a href="https://arxiv.org/abs/2403.10949">SelfIE: Self-Interpretation of Large Language Model Embeddings</a></li>
               <li><a href="https://arxiv.org/abs/2401.06102">Patchscopes: A Unifying Framework for Inspecting Hidden Representations</a></li>
             </ul>
-          </p>
-          <p>
-            <b>Model intervention methods</b><br>
+            Intervention methods
             <ul>
               <li><a href="https://arxiv.org/abs/2308.10248">Activation Engineering</a></li>
               <li><a href="https://arxiv.org/abs/2106.09685">LoRA: Low-Rank Adaptation of Large Language Models</a></li>
               <li><a href="https://arxiv.org/abs/2310.01405">Representation Engineering: A Top-Down Approach to AI Transparency</a></li>
+            </ul>
           </p>
         </div>
       </div>
@@ -332,9 +353,9 @@
       <div class="column is-8">
         <div class="content">
           <p>
-            Webpage template adapted from 
+            Webpage template adapted from <a
             href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> and 
-            href="https://selfie.cs.columbia.edu/">SelfIE</a>
+            <a href="https://selfie.cs.columbia.edu/">SelfIE</a>
           </p>
         </div>
       </div>
