@@ -145,8 +145,8 @@
       <h2 class="teaser-text">
         <b>Language model alignment unintentionally amplifies implicit racial biases by reducing their sensitivity to race concepts - akin to race blindness in humans.</b> 
       </h2>
-          <figure>
-            <img src="static/images/selfie.jpg" alt="Alignment reduces explicit but increases implicit bias">
+      <figure style="width: 130%;">
+            <img src="static/images/selfie.jpg" alt="Alignment reduces explicit but increases implicit bias" style="width: 100%;">
             <figcaption>Interpretations of LM associations with <span class="dnerf">black/white</span>.  Alignment makes the model treat them more like pure colors rather than racial groups - ignoring race-related associations can exacerbate bias. </figcaption>
           </figure>
     </div>
@@ -201,7 +201,7 @@
 
         <div style="border: 1px solid #ccc; padding: 10px; border-radius: 6px; background-color: #f9f9f9; margin-top: 1rem;">
           <p>
-            &#x1F4A1; Key Insight: While alignment reduces explicit bias to near zero (8.1%), it <b>increases implicit bias to 91.4%. </b>
+            &#x1F4A1; <b>Key Insight:</b> While alignment reduces explicit bias to near zero (8.1%), it increases implicit bias to 91.4%. 
           </p>
         </div>
       </div> <!-- /.content -->
@@ -267,7 +267,7 @@
         </ul>
         <div style="border: 1px solid #ccc; padding: 10px; border-radius: 6px; background-color: #f9f9f9; margin-top: 1rem;">
           <p>
-            &#x1F4A1; Key Insight: <b>Aligned LMs failed to robustly represent race concepts in the face of ambiguity, exhibiting race blindness.</b> Not representing race likely fails to activate safety guardrails, leading to unintended biases.
+            &#x1F4A1; <b>Key Insight:</b> Aligned LMs failed to robustly represent race concepts in the face of ambiguity, exhibiting race blindness. Not representing race likely fails to activate safety guardrails, leading to unintended biases.
           </p>
         </div>
       </div> <!-- /.content -->
@@ -291,14 +291,6 @@
           <b>add racial awareness</b> to reduce bias - similar to how acknowledging race reduces human colorblind racism. 
           The effectiveness of this approach also provides causal support for our interpretability findings.
         </p>
-        <div class="qualitative-understanding-images" style="margin-top: 1rem;">
-          <figure>
-            <img src="static/images/intervention.jpg" alt="Causal results">
-            <figcaption>
-              Strengthening race associations reduces implicit and explicit bias in LMs.
-            </figcaption>
-          </figure>
-        </div>
 
         <!-- Embedding Intervention via Steering -->
         <h3 class="title is-4" style="margin-top: 2rem;">Embedding Intervention via Steering</h3>
@@ -311,7 +303,14 @@
             </li>
           </ul>
         </div> <!-- /.content -->
-
+        <div class="qualitative-understanding-images" style="margin-top: 1rem;">
+          <figure>
+            <img src="static/images/intervention.jpg" alt="Causal results">
+            <figcaption>
+              Strengthening race associations reduces implicit and explicit bias in LMs.
+            </figcaption>
+          </figure>
+        </div>
         <!-- Weight Intervention via LoRA Fine‐tuning -->
         <h3 class="title is-4" style="margin-top: 2rem;">Weight Intervention via LoRA Fine-tuning</h3>
         <div class="content">
@@ -326,7 +325,7 @@
 
           <div style="border: 1px solid #ccc; padding: 10px; border-radius: 6px; background-color: #f9f9f9; margin-top: 1rem;">
             <p>
-              &#x1F4A1; Key Insight: <b>Enhancing the model's awareness of racial concepts effectively reduces implicit bias.</b>
+              &#x1F4A1; <b>Key Insight:</b> Enhancing the model's awareness of racial concepts effectively reduces implicit bias.
             </p>
           </div>
         </div> <!-- /.content (Weight Intervention) -->
