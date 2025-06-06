@@ -2,6 +2,8 @@
 
 Deployed at [slhleosun.github.io/slhleosun](slhleosun.github.io/slhleosun)
 
+[Paper Link](https://arxiv.org/abs/2506.00253)
+
 For Paper Code & Data, please refer to this [repository](https://github.com/slhleosun/aligned-but-blind)
 
 # Website License
